@@ -282,7 +282,7 @@ class MentionsInput extends React.Component {
 
     // Propagate change
     // let handleChange = this.getOnChange(this.props) || emptyFunction;
-    let eventMock = { target: { value: newValue } };
+    let eventMock = { target: { name: this.props.name, value: newValue } };
     // this.props.onChange.call(this, eventMock, newValue, newPlainTextValue, mentions);
     this.executeOnChange(eventMock, newValue, newPlainTextValue, mentions);
   };
@@ -603,7 +603,7 @@ class MentionsInput extends React.Component {
     });
 
     // Propagate change
-    const eventMock = { target: { value: newValue }};
+    const eventMock = { target: { name: this.props.name, value: newValue } };
     const mentions = utils.getMentions(newValue, this.props.markup);
     const newPlainTextValue = utils.spliceString(plainTextValue, querySequenceStart, querySequenceEnd, displayValue);
 
